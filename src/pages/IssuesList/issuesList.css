@@ -1,17 +1,20 @@
-.issues-container {
-  text-align: center;
-}
-.issues-container h1 {
-  margin: 5vh 0;
+h3 a {
+  text-decoration: none;
+  color: #000000;
 }
 
-.issues-list {
+.search-section {
   margin: auto;
-  padding: 1rem;
-  width: 80vw;
-  text-align: left;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  min-height: 25vh;
-  position: relative;
+  margin-bottom: 1rem;
+}
+
+input {
+  border: none;
+  border-bottom: 2px solid #bdb9b9;
+  width: 30%;
+  font-size: 1rem;
+  padding: 0.5rem;
+  height: 1.5rem;
+  outline: none;
+  box-shadow: 0 0 5px 0.5px #d3d3d3;
 }
