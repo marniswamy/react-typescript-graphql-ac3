@@ -1,0 +1,15 @@
+.list-item {
+  border-bottom: 1px solid #adabab;
+  margin: 1rem 0;
+}
+
+h3 {
+  margin: 0.5rem 0;
+}
+
+p {
+  margin: 0.25rem 0;
+  font-size: 0.8rem;
+  opacity: 0.9;
+  color: #000000;
+}

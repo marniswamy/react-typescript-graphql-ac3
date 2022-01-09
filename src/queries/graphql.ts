@@ -12,6 +12,11 @@ export const ISSUES_LIST = gql`
           title
           body
           id
+          updatedAt
+          createdAt
+          author {
+            login
+          }
         }
         totalCount
       }
