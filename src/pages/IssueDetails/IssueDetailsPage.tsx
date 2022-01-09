@@ -1,8 +1,8 @@
 import React from "react";
-import "./IssueDetails.css";
+import "./IssueDetailsPage.css";
 import { Link, useParams } from "react-router-dom";
 
-const IssueDetails = () => {
+const IssueDetailsPage = () => {
   const { id } = useParams();
   return (
     <div className="card-wrapper">
@@ -17,4 +17,4 @@ const IssueDetails = () => {
   );
 };
 
-export default IssueDetails;
+export default IssueDetailsPage;

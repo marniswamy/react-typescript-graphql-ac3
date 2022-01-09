@@ -1,10 +1,10 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import IssueDetails from "./IssueDetails";
+import IssueDetailsPage from "./IssueDetailsPage";
 
 
 test("renders IssueDetails component", () => {
-  render(<IssueDetails />);
+  render(<IssueDetailsPage />);
   const linkElement = screen.getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
 });
