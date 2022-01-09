@@ -7,7 +7,7 @@ import IssuesList from "./pages/IssuesList/IssuesList";
 const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<Navigate replace to="/issuesList" />} />
+      <Route path="*" element={<Navigate replace to="/issuesList" />} />
       <Route path="/issuesList" element={<IssuesList />} />
       <Route path="/issuesList/:id" element={<IssueDetails />}></Route>
     </Routes>
