@@ -1,4 +1,6 @@
 import "./IssueDetails.css";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from 'remark-gfm'
 
 const IssueDetails = (props: any) => {
   const { issue } = props;
@@ -12,6 +14,7 @@ const IssueDetails = (props: any) => {
         {issue?.number} {issue.title}
       </h3>
       <div className="issue-body">{issue.body}</div>
+      <ReactMarkdown children={issue.body} remarkPlugins={[remarkGfm]}></ReactMarkdown>
     </div>
   );
 };
