@@ -11,7 +11,7 @@ export const ISSUES_LIST = gql`
         nodes {
           title
           body
-          id
+          number
           updatedAt
           createdAt
           author {
@@ -19,6 +19,24 @@ export const ISSUES_LIST = gql`
           }
         }
         totalCount
+      }
+    }
+  }
+`;
+
+export const ISSUE_DETAILS = gql`
+  query Issue($number: Int!) {
+    repository(owner: "facebook", name: "react") {
+      issue(number: $number) {
+        author {
+          login
+        }
+        body
+        createdAt
+        lastEditedAt
+        number
+        title
+        updatedAt
       }
     }
   }

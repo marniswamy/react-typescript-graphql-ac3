@@ -1,6 +1,4 @@
 import "./IssuesListPage.css";
-
-import { Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
 import Loader from "../../components/Loader/Loader";
@@ -17,7 +15,7 @@ const IssuesListPage = () => {
   }
 
   if (error) {
-    return <Error />;
+    return <Error error={error} />;
   }
 
   return (

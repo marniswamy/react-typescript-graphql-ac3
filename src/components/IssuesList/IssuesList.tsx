@@ -7,11 +7,11 @@ const IssuesList = (props: any) => {
   return (
     <Fragment>
       {issues.map((issue: any) => (
-        <div className="list-item" key={issue.id}>
+        <div className="list-item" key={issue.number}>
           <h3>
             <Link
               title="Click here for more details"
-              to={`/issuesList/${issue.id}`}
+              to={`/issuesList/${issue.number}`}
             >
               {issue.title}
             </Link>

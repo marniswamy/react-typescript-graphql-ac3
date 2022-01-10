@@ -8,7 +8,7 @@ const App = () => {
     <Routes>
       <Route path="*" element={<Navigate replace to="/issuesList" />} />
       <Route path="/issuesList" element={<IssuesListPage />} />
-      <Route path="/issuesList/:id" element={<IssueDetailsPage />}></Route>
+      <Route path="/issuesList/:number" element={<IssueDetailsPage />}></Route>
     </Routes>
   );
 };
