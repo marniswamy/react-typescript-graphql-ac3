@@ -1,0 +1,8 @@
+.issue-header {
+  padding-top: 0.25rem;
+  color: rgb(61, 60, 60);
+}
+.issue-body {
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+}

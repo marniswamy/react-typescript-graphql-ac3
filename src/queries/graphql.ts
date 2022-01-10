@@ -9,8 +9,8 @@ export const ISSUES_LIST = gql`
         orderBy: { field: CREATED_AT, direction: DESC }
       ) {
         nodes {
+          id
           title
-          body
           number
           updatedAt
           createdAt
@@ -31,6 +31,7 @@ export const ISSUE_DETAILS = gql`
         author {
           login
         }
+        id
         body
         createdAt
         lastEditedAt
