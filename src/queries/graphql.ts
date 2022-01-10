@@ -38,6 +38,18 @@ export const ISSUE_DETAILS = gql`
         number
         title
         updatedAt
+        comments(orderBy: { field: UPDATED_AT, direction: ASC }, first: 20) {
+          nodes {
+            id
+            body
+            author {
+              login
+            }
+            createdAt
+            updatedAt
+          }
+          totalCount
+        }
       }
     }
   }
