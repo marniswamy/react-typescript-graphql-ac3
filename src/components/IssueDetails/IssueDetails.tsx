@@ -2,6 +2,7 @@ import "./IssueDetails.css";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Comments from "../Comments/Comments";
+import { formatDateHelper } from "../../helpers/dateHelper";
 
 const IssueDetails = (props: any) => {
   const { issue } = props;
@@ -14,7 +15,7 @@ const IssueDetails = (props: any) => {
           {issue.state}
         </span>
         <strong>{issue?.author?.login}</strong> opened this issue on{" "}
-        {issue.createdAt}
+        {formatDateHelper(issue.createdAt)}
       </p>
       <h3>
         {issue?.number} {issue?.title}

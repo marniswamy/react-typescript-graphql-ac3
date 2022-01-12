@@ -5,12 +5,13 @@ export const ISSUES_LIST = gql`
     repository(owner: "facebook", name: "react") {
       issues(
         states: [$state]
-        first: 10
+        first: 50
         orderBy: { field: CREATED_AT, direction: DESC }
       ) {
         nodes {
           id
           title
+          body
           number
           state
           updatedAt

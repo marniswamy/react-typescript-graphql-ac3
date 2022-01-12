@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
+import { formatDateHelper } from "../../helpers/dateHelper";
 import "./IssuesList.css";
 
 const IssuesList = (props: any) => {
@@ -22,8 +23,9 @@ const IssuesList = (props: any) => {
             >
               {issue.state}
             </span>
-            Issue created at {issue.createdAt} by <b>{issue.author.login}</b>.
-            Last updated at {issue.updatedAt}
+            Issue created at {formatDateHelper(issue.createdAt)} by{" "}
+            <b>{issue.author.login}</b>. Last updated at{" "}
+            {formatDateHelper(issue.updatedAt)}
           </p>
         </div>
       ))}
