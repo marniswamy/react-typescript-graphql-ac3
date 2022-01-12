@@ -20,10 +20,6 @@ const IssuesListPage = () => {
     }
   );
 
-  if (loading) {
-    return <Loader />;
-  }
-
   if (error) {
     return <Error error={error} />;
   }
@@ -48,12 +44,14 @@ const IssuesListPage = () => {
         <button onClick={() => getSearchResults()}>Search</button>
       </div>
       <div className="card-content">
-        {data ? (
+        {loading && <Loader />}
+        {data && (
           <Fragment>
             <Count totalCount={data?.repository?.issues?.totalCount} />
             <IssuesList issues={data.repository?.issues?.nodes} />
           </Fragment>
-        ) : (
+        )}
+        {!loading && !data && (
           <div className="align-center">
             <span>No search results available</span>
             <p>

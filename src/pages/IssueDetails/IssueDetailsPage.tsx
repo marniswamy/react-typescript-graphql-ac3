@@ -15,10 +15,6 @@ const IssueDetailsPage = () => {
     },
   });
 
-  if (loading) {
-    return <Loader />;
-  }
-
   if (error) {
     return <Error error={error} />;
   }
@@ -29,7 +25,8 @@ const IssueDetailsPage = () => {
         <Link className="back-button" to="/issuesList">
           Go Back
         </Link>
-        <IssueDetails issue={data?.repository?.issue} />
+        {loading && <Loader />}
+        {data && <IssueDetails issue={data?.repository?.issue} />}
       </div>
     </div>
   );
