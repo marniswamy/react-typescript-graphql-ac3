@@ -17,6 +17,11 @@ const IssuesList = (props: any) => {
             </Link>
           </h3>
           <p>
+            <span
+              className={`state ${issue?.state === "OPEN" ? "open" : "closed"}`}
+            >
+              {issue.state}
+            </span>
             Issue created at {issue.createdAt} by <b>{issue.author.login}</b>.
             Last updated at {issue.updatedAt}
           </p>

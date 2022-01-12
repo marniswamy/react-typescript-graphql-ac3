@@ -1,10 +1,10 @@
 import { gql } from "@apollo/client";
 
 export const ISSUES_LIST = gql`
-  query {
+  query SearchList($state: IssueState!) {
     repository(owner: "facebook", name: "react") {
       issues(
-        states: OPEN
+        states: [$state]
         first: 10
         orderBy: { field: CREATED_AT, direction: DESC }
       ) {
@@ -12,6 +12,7 @@ export const ISSUES_LIST = gql`
           id
           title
           number
+          state
           updatedAt
           createdAt
           author {
@@ -37,6 +38,7 @@ export const ISSUE_DETAILS = gql`
         lastEditedAt
         number
         title
+        state
         updatedAt
         comments(orderBy: { field: UPDATED_AT, direction: ASC }, first: 20) {
           nodes {

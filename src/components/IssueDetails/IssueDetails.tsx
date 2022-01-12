@@ -8,6 +8,11 @@ const IssueDetails = (props: any) => {
   return (
     <div>
       <p className="issue-header">
+        <span
+          className={`state ${issue?.state === "OPEN" ? "open" : "closed"}`}
+        >
+          {issue.state}
+        </span>
         <strong>{issue?.author?.login}</strong> opened this issue on{" "}
         {issue.createdAt}
       </p>

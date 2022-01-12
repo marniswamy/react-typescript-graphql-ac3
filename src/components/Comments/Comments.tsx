@@ -2,7 +2,6 @@ import "./Comments.css";
 
 const Comments = (props: any) => {
   const { comments } = props;
-  console.log("comments ", comments);
   if (!comments.totalCount) {
     return null;
   }
