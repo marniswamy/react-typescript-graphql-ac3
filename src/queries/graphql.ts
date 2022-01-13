@@ -1,7 +1,37 @@
 import { gql } from "@apollo/client";
 
+export const SEARCH_LIST_QUERY = gql`
+  query SearchList($state: IssueState!, $search: String!) {
+    repository(owner: "facebook", name: "react") {
+      issues(
+        states: [$state]
+        first: 50
+        orderBy: { field: CREATED_AT, direction: DESC }
+      ) {
+        totalCount
+      }
+    }
+    search(query: $search, type: ISSUE, first: 20) {
+      nodes {
+        ... on Issue {
+          id
+          title
+          body
+          number
+          state
+          updatedAt
+          createdAt
+          author {
+            login
+          }
+        }
+      }
+    }
+  }
+`;
+
 export const ISSUES_LIST = gql`
-  query SearchList($state: IssueState!) {
+  query IssueList($state: IssueState!) {
     repository(owner: "facebook", name: "react") {
       issues(
         states: [$state]

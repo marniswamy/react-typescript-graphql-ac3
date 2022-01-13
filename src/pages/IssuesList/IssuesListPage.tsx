@@ -8,7 +8,7 @@ import { ISSUES_LIST } from "../../queries/graphql";
 import IssuesList from "../../components/IssuesList/IssuesList";
 import Count from "../../components/Count/Count";
 
-const IssuesListPage = () => {
+const IssuesListPage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [status, setStatus] = useState("OPEN");
   const [getSearchResults, { loading, error, data }] = useLazyQuery(

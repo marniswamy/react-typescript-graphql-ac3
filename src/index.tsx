@@ -3,13 +3,14 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import {
   ApolloClient,
+  InMemoryCache,
   ApolloProvider,
   createHttpLink,
-  InMemoryCache,
+  NormalizedCacheObject,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-// TODO: Move this to local file
+// Move this to local file
 const GITHUB_ACCESS_TOKEN = "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";
 const GITHUB_API_URL = "https://api.github.com/graphql";
 
@@ -26,7 +27,7 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
-const client = new ApolloClient({
+const client: ApolloClient<NormalizedCacheObject> = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
