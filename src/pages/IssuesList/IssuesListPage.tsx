@@ -7,6 +7,7 @@ import Error from "../../components/Error/Error";
 import { ISSUES_LIST } from "../../queries/graphql";
 import IssuesList from "../../components/IssuesList/IssuesList";
 import Count from "../../components/Count/Count";
+import Message from "../../components/Message/Message";
 
 const IssuesListPage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -51,15 +52,7 @@ const IssuesListPage: React.FC = () => {
             <IssuesList issues={data.repository?.issues?.nodes} />
           </Fragment>
         )}
-        {!loading && !data && (
-          <div className="align-center">
-            <span>No search results available</span>
-            <p>
-              [You can use the above input to search the body or title of the
-              React repo's issues as well as for the status OPEN or CLOSED]
-            </p>
-          </div>
-        )}
+        {!loading && !data && <Message />}
       </div>
     </div>
   );
