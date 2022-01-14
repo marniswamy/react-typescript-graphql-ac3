@@ -45,5 +45,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "apollo": "^2.32.5",
+    "artillery": "^1.6.0-26",
+    "npm-watch": "^0.6.0"
   }
 }

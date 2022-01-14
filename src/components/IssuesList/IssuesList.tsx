@@ -3,11 +3,30 @@ import { Link } from "react-router-dom";
 import { formatDateHelper } from "../../helpers/dateHelper";
 import "./IssuesList.css";
 
+interface Issue {
+  id: string;
+  title: string;
+  body: string;
+  number: string;
+  state: string;
+  updatedAt: string;
+  createdAt: string;
+  author: {
+    login: string;
+  };
+}
+
 const IssuesList = (props: any) => {
-  const { issues } = props;
+  const { issues, searchText } = props;
+
+  const filteredList = issues.filter(
+    (item: Issue) =>
+      item.title.includes(searchText) || item.body.includes(searchText)
+  );
+
   return (
     <Fragment>
-      {issues.map((issue: any) => (
+      {filteredList.map((issue: Issue) => (
         <div className="list-item" key={issue.id}>
           <h3>
             <Link

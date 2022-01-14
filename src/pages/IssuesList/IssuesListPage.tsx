@@ -49,7 +49,10 @@ const IssuesListPage: React.FC = () => {
         {data && (
           <Fragment>
             <Count totalCount={data?.repository?.issues?.totalCount} />
-            <IssuesList issues={data.repository?.issues?.nodes} />
+            <IssuesList
+              issues={data.repository?.issues?.nodes}
+              searchText={searchQuery}
+            />
           </Fragment>
         )}
         {!loading && !data && <Message />}

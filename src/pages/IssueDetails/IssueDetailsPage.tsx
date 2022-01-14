@@ -7,7 +7,7 @@ import Loader from "../../components/Loader/Loader";
 import Error from "../../components/Error/Error";
 import IssueDetails from "../../components/IssueDetails/IssueDetails";
 
-const IssueDetailsPage = () => {
+const IssueDetailsPage: React.FC = () => {
   const { number } = useParams();
   const { loading, error, data } = useQuery(ISSUE_DETAILS, {
     variables: {
