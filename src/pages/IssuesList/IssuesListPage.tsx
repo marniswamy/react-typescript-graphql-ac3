@@ -9,7 +9,15 @@ import IssuesList from "../../components/IssuesList/IssuesList";
 import Count from "../../components/Count/Count";
 import Message from "../../components/Message/Message";
 
-const IssuesListPage: React.FC = () => {
+interface IssuesListPageProps {}
+
+/**
+ * IssuesListPage to dispalt the list of issues list along with the input
+ * filter and select component
+ *
+ * @returns the comppnent
+ */
+const IssuesListPage: React.FC<IssuesListPageProps> = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [status, setStatus] = useState("OPEN");
   const [getSearchResults, { loading, error, data }] = useLazyQuery(
@@ -21,6 +29,9 @@ const IssuesListPage: React.FC = () => {
     }
   );
 
+  /**
+   * In case of error response we show the error component
+   */
   if (error) {
     return <Error error={error} />;
   }
