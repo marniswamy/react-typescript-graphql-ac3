@@ -1,8 +1,24 @@
 import "./Comments.css";
 
-const Comments = (props: any) => {
+export interface Comments {
+  comments: {
+    totalCount: number;
+    nodes: [Comment];
+  };
+}
+export interface Comment {
+  id: string;
+  authoe: {
+    login: string;
+  };
+  body: string;
+  updatedAt: string;
+  createdAt: string;
+}
+
+const Comments: React.FC<Comments> = (props: Comments) => {
   const { comments } = props;
-  if (!comments.totalCount) {
+  if (!comments?.totalCount) {
     return null;
   }
   return (
