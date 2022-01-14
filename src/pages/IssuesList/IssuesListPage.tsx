@@ -42,7 +42,9 @@ const IssuesListPage: React.FC = () => {
           placeholder="Enter search query"
           onChange={(event) => setSearchQuery(event?.target.value)}
         />
-        <button onClick={() => getSearchResults()}>Search</button>
+        <button data-testid="search_button" onClick={() => getSearchResults()}>
+          Search
+        </button>
       </div>
       <div className="card-content">
         {loading && <Loader />}
